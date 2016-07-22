@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ViFit</string>
+    <string name="btn_signin">Sign In</string>
+    <string name="field_hint_email">e-mail</string>
+    <string name="field_hint_password">password</string>
+    <string name="msg_signin_success">Sign in successful!</string>
+    <string name="msg_signin_failed">Sign in failed!</string>
+</resources>

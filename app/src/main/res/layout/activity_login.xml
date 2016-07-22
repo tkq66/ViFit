@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="com.dtk.vifit.LoginActivity">
+
+    <EditText
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/signin_email"
+        android:layout_width="312dp"
+        android:layout_marginTop="30dp"
+        android:hint="@string/field_hint_email" />
+
+    <EditText
+        android:layout_gravity="center_horizontal"
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/signin_password"
+        android:hint="@string/field_hint_password" />
+
+    <Button
+        android:text="@string/btn_signin"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:id="@+id/signin_button" />
+</LinearLayout>
