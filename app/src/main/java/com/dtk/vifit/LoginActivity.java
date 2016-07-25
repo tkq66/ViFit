@@ -11,7 +11,7 @@ import android.widget.Toast;
 public class LoginActivity extends Activity
 {
 
-    private Button signin_btn;
+    private Button signin_btn, register_btn;
     private EditText email_form, pwd_form;
 
     @Override
@@ -23,6 +23,7 @@ public class LoginActivity extends Activity
         email_form = (EditText) findViewById(R.id.signin_email);
         pwd_form = (EditText) findViewById(R.id.signin_password);
         signin_btn = (Button) findViewById(R.id.signin_button);
+        register_btn = (Button) findViewById(R.id.register_button);
 
         signin_btn.setOnClickListener(new View.OnClickListener()
         {
@@ -32,35 +33,15 @@ public class LoginActivity extends Activity
                 signinHandler(email_form.getText().toString(), pwd_form.getText().toString());
             }
         });
-    }
 
-    /**
-     *  Handles sign-in event prompted by user upon pressing the sign-in button by displaying
-     *  Toast message whether sign in succeeds or failed. If success, app proceeds to next
-     *  page showing user's main page. If fails, stay on the same page.
-     *  @param email Email used to identify user and sign in.
-     *  @param pwd Password used to authenticate user and sign in.
-     */
-    private void signinHandler(String email, String pwd)
-    {
-        if(this.authenticateUser(email, pwd))
+        register_btn.setOnClickListener(new View.OnClickListener()
         {
-            Toast.makeText(getApplicationContext(),
-                    R.string.msg_signin_success,
-                    Toast.LENGTH_SHORT)
-                    .show();
-
-            Intent i = new Intent(getApplicationContext(), DailyProgressActivity.class);
-            startActivity(i);
-            setContentView(R.layout.activity_daily_progress);
-        }
-        else
-        {
-            Toast.makeText(getApplicationContext(),
-                    R.string.msg_signin_failed,
-                    Toast.LENGTH_SHORT)
-                    .show();
-        }
+            @Override
+            public void onClick(View v)
+            {
+                registerHandler();
+            }
+        });
     }
 
     /**
@@ -78,5 +59,45 @@ public class LoginActivity extends Activity
         }
 
         return false;
+    }
+
+    /**
+     * Handles sign-in event prompted by user upon pressing the sign-in button. If success, app
+     * proceeds to next page showing user's main page. If fails, stay on the same page and
+     * display Toast message.
+     * @param email Email used to identify user and sign in.
+     * @param pwd Password used to authenticate user and sign in.
+     */
+    private void signinHandler(String email, String pwd)
+    {
+        if(!authenticateUser(email, pwd))
+        {
+            Toast.makeText(getApplicationContext(),
+                    R.string.msg_signin_failed,
+                    Toast.LENGTH_SHORT)
+                    .show();
+
+            return;
+        }
+
+        proceedToMainActivity();
+    }
+
+    private void proceedToMainActivity()
+    {
+        Intent i = new Intent(getApplicationContext(), DailyProgressActivity.class);
+        startActivity(i);
+        setContentView(R.layout.activity_daily_progress);
+    }
+
+    /**
+     * Handles register event prompted by user upon pressing the register button. App proceeds to
+     * the next page that asks user for registeration information.
+     */
+    private void registerHandler()
+    {
+        Intent i = new Intent(getApplicationContext(), InputFormActivity.class);
+        startActivity(i);
+        setContentView(R.layout.activity_input_form);
     }
 }
