@@ -11,32 +11,32 @@
 
     <TextView
         android:textSize="7pt"
+        android:id="@+id/welcome_text"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:id="@+id/welcome_text"/>
+        android:layout_marginTop="10dp"/>
 
     <TextView
+        android:id="@+id/time_text"
         android:textSize="20pt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:id="@+id/time_text"/>
+        android:layout_marginRight="10dp"/>
 
     <Spinner
+        android:id="@+id/select_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:id="@+id/select_date"/>
+        android:layout_marginTop="10dp"/>
 
     <TableLayout
+        android:id="@+id/schedule_table"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
-        android:id="@+id/schedule_table">
+        android:layout_marginTop="10dp">
 
     </TableLayout>
 
