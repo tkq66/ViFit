@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_input_form"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.dtk.vifit.InputFormActivity">
+
+    <EditText
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:inputType="textEmailAddress"
+        android:ems="10"
+        android:id="@+id/email_regis_form"
+        android:hint="@string/field_hint_email"/>
+
+    <EditText
+        android:layout_width="312dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/password_regis_form"
+        android:hint="@string/field_hint_password"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/age_form"
+        android:hint="@string/field_hint_age"/>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_sex_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:context="com.dtk.vifit.InputForm">
+
+        <TextView
+            android:text="@string/text_label_sex"
+            android:layout_height="match_parent"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:textSize="8pt"
+            android:id="@+id/sex_label"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/sex_radio_group">
+
+            <RadioButton
+                android:text="@string/btn_male"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:id="@+id/male_radio_btn"/>
+
+            <RadioButton
+                android:text="@string/btn_female"
+                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:id="@+id/female_radio_btn"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_weight_form"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        tools:context="com.dtk.vifit.InputForm">
+
+        <EditText
+            android:layout_width="106dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/weight_form"
+            android:hint="@string/field_hint_weight"/>
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:id="@+id/weight_unit_radio_group">
+
+            <RadioButton
+                android:text="@string/btn_unit_lbs"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:id="@+id/lbs_radio_btn"/>
+
+            <RadioButton
+                android:text="@string/btn_unit_kg"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:id="@+id/kg_radio_btn"/>
+
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <Button
+        android:text="@string/btn_done_regis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:id="@+id/done_button"/>
+
+</LinearLayout>
